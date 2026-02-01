@@ -80,11 +80,14 @@
     <script>
         document.getElementById('checkout-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const email = document.getElementById('email').value;
             const plan = document.querySelector('input[name="plan"]:checked').value;
             
-            // TODO: Integrate with Stripe checkout
-            window.location.href = `mailto:sales@neuralquantum.ai?subject=VibeDNA API Pro (${plan})&body=Email: ${email}`;
+            if (plan === 'enterprise') {
+                window.location.href = 'mailto:sales@neuralquantum.ai?subject=VibeDNA API Enterprise';
+            } else {
+                // Redirect to Stripe payment link
+                window.location.href = 'https://buy.stripe.com/7sY14n3vD4Ux76latg1sQ02';
+            }
         });
     </script>
 </body>

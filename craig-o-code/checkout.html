@@ -92,14 +92,10 @@
             e.preventDefault();
             const btn = document.getElementById('submit-btn');
             btn.disabled = true;
-            btn.textContent = 'Processing...';
+            btn.textContent = 'Redirecting to checkout...';
             
-            const email = document.getElementById('email').value;
-            const plan = document.querySelector('input[name="plan"]:checked').value;
-            
-            // TODO: Integrate with Stripe checkout
-            // For now, redirect to contact
-            window.location.href = `mailto:sales@neuralquantum.ai?subject=Craig-O-Code Pro (${plan})&body=Email: ${email}`;
+            // Redirect to Stripe payment link
+            window.location.href = 'https://buy.stripe.com/6oU14n4zH3QtgGVbxk1sQ01';
         });
     </script>
 </body>
